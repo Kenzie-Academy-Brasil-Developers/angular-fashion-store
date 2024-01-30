@@ -1,7 +1,9 @@
 <div *ngIf="isCartOpen">
-    <div role="dialog">
-        <button (click)="handleClose()">Fechar</button>
-        <h2 class="title three">Carrinho</h2>
-        <app-cart-product-list></app-cart-product-list>
-    </div>
+  <div class="background-white" role="dialog">
+    <button (click)="handleClose()" aria-label="close" title="Fechar">
+      <span class="material-symbols-outlined"> close </span>
+    </button>
+    <h2 class="title three m-bottom2">Carrinho</h2>
+    <app-cart-product-list></app-cart-product-list>
+  </div>
 </div>

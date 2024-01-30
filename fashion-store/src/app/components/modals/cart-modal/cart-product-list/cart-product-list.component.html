@@ -10,11 +10,13 @@
             currency: "BRL"
           })
         }}</span>
-        <button (click)="handleRemove(product.id)">Remover</button>
+        <button (click)="handleRemove(product.id)" aria-label="remove_product" title="Remover produto">
+          <span class="material-symbols-outlined"> remove </span>
+        </button>
       </div>
     </li>
   </ul>
-  <p *ngIf="cartProductList.length === 0">Carrinho vazio.</p>
+  <p class="paragraph" *ngIf="cartProductList.length === 0">Carrinho vazio.</p>
   <div>
     <p class="price small">
       Total:
