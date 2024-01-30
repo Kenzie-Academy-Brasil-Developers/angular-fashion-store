@@ -13,6 +13,6 @@ export class ProductRequest {
   }
 
   getProduct(productId: string) {
-    return this.http.get<IProduct>(`${this.BASE_URL}/procucts/${productId}`);
+    return this.http.get<IProduct>(`${this.BASE_URL}/products/${productId}`);
   }
 }

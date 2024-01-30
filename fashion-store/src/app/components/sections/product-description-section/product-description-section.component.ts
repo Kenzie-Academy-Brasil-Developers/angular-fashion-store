@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductRequest } from '../../../api/product.request';
 import { IProduct } from '../../../interfaces/product.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-description-section',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-description-section.component.html',
   styleUrl: './product-description-section.component.scss',
 })
