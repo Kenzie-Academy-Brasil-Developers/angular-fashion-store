@@ -1,13 +1,13 @@
 <section>
   <div *ngIf="product">
-    <p><a routerLink="/">Home</a> - {{ product.name }}</p>
+    <p class="menu"><a routerLink="/">Home</a> - {{ product.name }}</p>
     <div>
       <div>
         <img [src]="product.img" [alt]="product.name" />
       </div>
       <div>
-        <h1>{{ product.name }}</h1>
-        <span>{{
+        <h1 class="title four">{{ product.name }}</h1>
+        <span class="price">{{
           product.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL"

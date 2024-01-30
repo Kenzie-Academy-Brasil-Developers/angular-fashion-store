@@ -3,8 +3,8 @@
     <li *ngFor="let product of cartProductList">
       <img [src]="product.img" [alt]="product.name" />
       <div>
-        <h3>{{ product.name }}</h3>
-        <span>{{
+        <h3 class="title five">{{ product.name }}</h3>
+        <span class="price small">{{
           product.price.toLocaleString("pt-BR", {
             style: "currency",
             currency: "BRL"
@@ -16,9 +16,11 @@
   </ul>
   <p *ngIf="cartProductList.length === 0">Carrinho vazio.</p>
   <div>
-    <p>Total:</p>
-    <span>{{
-      total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
-    }}</span>
+    <p class="price small">
+      Total:
+      <strong>{{
+        total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+      }}</strong>
+    </p>
   </div>
 </div>
