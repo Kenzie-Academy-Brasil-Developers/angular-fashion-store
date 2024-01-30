@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  constructor(private cartService: CartService) {}
 
+  handleOpen(){
+    this.cartService.setIsCartOpen(true);
+  }
 }

@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductRequest } from '../../../api/product.request';
 import { IProduct } from '../../../interfaces/product.interface';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product-description-section',
@@ -16,7 +17,8 @@ export class ProductDescriptionSectionComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private productRequest: ProductRequest
+    private productRequest: ProductRequest,
+    private cartService: CartService
   ) {
     this.route.paramMap.subscribe(params => {
       const id = params.get("id");
@@ -31,5 +33,9 @@ export class ProductDescriptionSectionComponent {
 
   get product(){
     return this.productSignal();
+  }
+
+  handleAdd(product: IProduct){
+    this.cartService.addProduct(product);
   }
 }
