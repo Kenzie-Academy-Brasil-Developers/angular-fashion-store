@@ -1,11 +1,17 @@
 <header class="background-white">
   <div class="container">
-    <a routerLink="/">
-      <img src="../../../../assets/FashionLogo.png" alt="Logo Fashion Store" />
-    </a>
+    <div class="flex-box">
+      <a routerLink="/">
+        <img
+          class="logo"
+          src="../../../../assets/FashionLogo.png"
+          alt="Logo Fashion Store"
+        />
+      </a>
 
-    <button (click)="handleOpen()" aria-label="cart" title="Abrir carrinho">
-      <span class="material-symbols-outlined"> shopping_cart </span>
-    </button>
+      <button (click)="handleOpen()" aria-label="cart" title="Abrir carrinho">
+        <span class="material-symbols-outlined"> shopping_cart </span>
+      </button>
+    </div>
   </div>
 </header>
