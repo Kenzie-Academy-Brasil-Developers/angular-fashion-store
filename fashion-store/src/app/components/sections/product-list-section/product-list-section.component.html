@@ -1,7 +1,7 @@
 <section id="produtos" class="section-padding background-white">
   <div class="container">
     <h2 class="title two m-bottom4">{{ title }}</h2>
-    <ul>
+    <ul class="product-list">
       <li *ngFor="let product of productList">
         <img [src]="product.img" [alt]="product.name" />
         <h3 class="title five m-top2 m-bottom1">{{ product.name }}</h3>
@@ -11,7 +11,7 @@
             currency: "BRL"
           })
         }}</span>
-        <div class="m-top2">
+        <div class="m-top2 button-box">
           <button class="btn solid1 square" (click)="handleAdd(product)">
             <span
               class="material-symbols-outlined"
