@@ -4,7 +4,7 @@ import { IProduct } from '../interfaces/product.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ProductRequest {
-  private BASE_URL = 'http://localhost:3001';
+  private BASE_URL = 'https://product-fake-api.onrender.com';
 
   constructor(private http: HttpClient) {}
 
