@@ -8,7 +8,7 @@ export class CartService {
   readonly isCartOpen = signal(false);
   readonly cartProductList = signal<IProduct[]>([]);
 
-  getIsCartOpen(){
+  getIsCartOpen() {
     return this.isCartOpen();
   }
 
@@ -16,16 +16,24 @@ export class CartService {
     this.isCartOpen.set(value);
   }
 
-  getProductList(){
+  getProductList() {
     return this.cartProductList();
   }
 
   addProduct(product: IProduct) {
-    this.cartProductList.update((cartProductList) => [
-      ...cartProductList,
-      product,
-    ]);
-    this.setIsCartOpen(true);
+    if (
+      !this.cartProductList().some(
+        (currentProduct) => currentProduct.id === product.id
+      )
+    ) {
+      this.cartProductList.update((cartProductList) => [
+        ...cartProductList,
+        product,
+      ]);
+      this.setIsCartOpen(true);
+    } else {
+      alert("Produto já adicionado ao carrinho.")
+    }
   }
 
   removeProduct(removingId: number) {
